@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guided Tourist - Discover Your Next Adventure</title>
+    <title>Guided Tourist - Where ExplorationMeets Expertise</title>
     <meta name="description" content="From majestic national parks to hidden local gems, your journey starts here. Book tours and attractions with Guided Tourist.">
     
     <style>
@@ -38,10 +38,10 @@
         
         /* CSS Variables */
         :root {
-            --color-brand: #74DC10;
-            --color-brand-dark: #65c20e;
-            --color-brand-darker: #56a80c;
-            --color-brand-light: #f0fdf4;
+            --color-brand: #58B38F;
+            --color-brand-dark: #4a9c7a;
+            --color-brand-darker: #3d8566;
+            --color-brand-light: #e8f5f0;
             --color-stone-50: #fafaf9;
             --color-stone-100: #f5f5f4;
             --color-stone-200: #e7e5e4;
@@ -99,7 +99,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--color-stone-200);
         }
@@ -131,7 +131,6 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            margin-top: 80px;
         }
         
         .hero-slider {
@@ -164,7 +163,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(28, 25, 23, 0.6), rgba(28, 25, 23, 0.6), rgba(28, 25, 23, 0.7));
+            background: linear-gradient(to bottom, rgba(28, 25, 23, 0.65), rgba(28, 25, 23, 0.65), rgba(28, 25, 23, 0.75));
         }
         
         .hero-content {
@@ -214,14 +213,14 @@
             font-weight: 400;
             letter-spacing: 0.015em;
             font-style: italic;
-            line-height: 1.4;
+            line-height: 1;
         }
         
         .hero-button {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--color-brand);
+            background: #373867;
             color: white;
             padding: 1rem 2rem;
             border-radius: 9999px;
@@ -235,7 +234,7 @@
         }
         
         .hero-button:hover {
-            background: var(--color-brand-dark);
+            background: #2e2f57;
             transform: scale(1.05);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
@@ -331,7 +330,7 @@
             font-family: var(--font-serif);
             font-style: italic;
             font-weight: 300;
-            margin: 5rem 0;
+            margin: 5rem 0 2rem 0;
             position: relative;
         }
         
@@ -348,7 +347,7 @@
         
         .who-we-are-cta {
             text-align: center;
-            margin-top: 5rem;
+            margin-top: 2rem;
         }
         
         .who-we-are-cta-text {
@@ -369,6 +368,18 @@
         }
         
         /* What We Offer Section */
+        .what-we-offer-section {
+            background: #302F45;
+        }
+        
+        .what-we-offer-section .section-title {
+            color: var(--color-stone-100);
+        }
+        
+        .what-we-offer-section .section-divider {
+            background: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
+        }
+        
         .offers-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -388,7 +399,7 @@
         }
         
         .offer-card {
-            background: linear-gradient(to bottom right, var(--color-stone-50), var(--color-stone-100));
+            background: white;
             padding: 2rem;
             border-radius: 1rem;
             border: 1px solid var(--color-stone-200);
@@ -399,6 +410,14 @@
             border-color: var(--color-brand);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             transform: translateY(-8px);
+        }
+        
+        .offer-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
         }
         
         .offer-icon {
@@ -425,7 +444,15 @@
         
         /* Why Choose Us Section */
         .why-choose-section {
-            background: linear-gradient(to bottom right, var(--color-brand-light), var(--color-brand-light), var(--color-stone-50));
+            background: white;
+        }
+        
+        .why-choose-section .section-title {
+            color: var(--color-stone-900);
+        }
+        
+        .why-choose-section .section-divider {
+            background: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
         }
         
         .reasons-grid {
@@ -495,8 +522,16 @@
         
         /* Testimonials Section */
         .testimonials-section {
-            background: var(--color-stone-900);
+            background: #302F45;
             color: white;
+        }
+        
+        .testimonials-section .section-title {
+            color: var(--color-stone-100);
+        }
+        
+        .testimonials-section .section-divider {
+            background: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
         }
         
         .testimonials-section .section-title {
@@ -505,11 +540,10 @@
         }
         
         .testimonial-box {
-            background: rgba(41, 37, 36, 0.5);
-            backdrop-filter: blur(10px);
+            background: white;
             padding: 3rem;
             border-radius: 1rem;
-            border: 1px solid var(--color-stone-700);
+            border: 1px solid var(--color-stone-200);
             min-height: 280px;
             display: flex;
             flex-direction: column;
@@ -528,6 +562,7 @@
             margin-bottom: 2rem;
             font-weight: 300;
             font-style: italic;
+            color: var(--color-stone-800);
         }
         
         .testimonial-author {
@@ -546,10 +581,11 @@
         .author-name {
             font-weight: bold;
             font-size: 1.125rem;
+            color: var(--color-stone-900);
         }
         
         .author-location {
-            color: #a8a29e;
+            color: var(--color-stone-600);
         }
         
         .testimonial-nav {
@@ -562,7 +598,7 @@
         .testimonial-button {
             width: 3rem;
             height: 3rem;
-            background: var(--color-stone-800);
+            background: var(--color-brand);
             border-radius: 9999px;
             display: flex;
             align-items: center;
@@ -635,10 +671,10 @@
         }
         
         .benefit-card {
-            background: linear-gradient(to bottom right, var(--color-brand-light), var(--color-brand-light));
+            background: linear-gradient(to bottom right, var(--color-stone-50), var(--color-stone-100));
             padding: 1.5rem;
             border-radius: 0.75rem;
-            border: 1px solid #bbf7d0;
+            border: 1px solid var(--color-stone-200);
         }
         
         .benefit-icon {
@@ -754,7 +790,7 @@
         
         /* Footer */
         footer {
-            background: var(--color-stone-900);
+            background: #302F45;
             color: var(--color-stone-300);
             padding: 2rem 1.5rem;
         }
@@ -921,14 +957,14 @@
     </section>
 
     <!-- What We Offer Section -->
-    <section id="what-we-offer">
+    <section id="what-we-offer" class="what-we-offer-section">
         <div class="container">
             <h2 class="section-title">What We Offer</h2>
             <div class="section-divider"></div>
 
             <div class="offers-grid">
                 <div class="offer-card">
-                    <div class="offer-icon">🏔️</div>
+                    <img src="services1.webp" alt="National Parks" class="offer-image">
                     <h3 class="offer-title">National Parks</h3>
                     <p class="offer-description">
                         Explore America's most breathtaking natural wonders with expert-guided tours
@@ -936,7 +972,7 @@
                 </div>
 
                 <div class="offer-card">
-                    <div class="offer-icon">🗺️</div>
+                    <img src="services2.webp" alt="Local Tours" class="offer-image">
                     <h3 class="offer-title">Local Tours</h3>
                     <p class="offer-description">
                         Discover hidden gems and authentic experiences in cities across the country
@@ -944,7 +980,7 @@
                 </div>
 
                 <div class="offer-card">
-                    <div class="offer-icon">🎭</div>
+                    <img src="services3.webp" alt="Attractions" class="offer-image">
                     <h3 class="offer-title">Attractions</h3>
                     <p class="offer-description">
                         Skip the lines at popular museums, landmarks, and entertainment venues
@@ -952,7 +988,7 @@
                 </div>
 
                 <div class="offer-card">
-                    <div class="offer-icon">📱</div>
+                    <img src="services4.webp" alt="Digital Tickets" class="offer-image">
                     <h3 class="offer-title">Digital Tickets</h3>
                     <p class="offer-description">
                         Instant access, eco-friendly, and hassle-free ticketing for all experiences
