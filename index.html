@@ -38,10 +38,10 @@
         
         /* CSS Variables */
         :root {
-            --color-brand: #58B38F;
-            --color-brand-dark: #4a9c7a;
-            --color-brand-darker: #3d8566;
-            --color-brand-light: #e8f5f0;
+            --color-brand: #8ADE08;
+            --color-brand-dark: #7ac907;
+            --color-brand-darker: #6ab406;
+            --color-brand-light: #f0fdf4;
             --color-stone-50: #fafaf9;
             --color-stone-100: #f5f5f4;
             --color-stone-200: #e7e5e4;
@@ -212,7 +212,6 @@
             font-family: 'Playfair Display', Georgia, Cambria, serif;
             font-weight: 400;
             letter-spacing: 0.015em;
-            font-style: italic;
             line-height: 1;
         }
         
@@ -367,13 +366,75 @@
             font-weight: 300;
         }
         
+        /* Who We Are Slider */
+        .who-we-are-slider {
+            position: relative;
+        }
+        
+        .who-we-are-slide {
+            display: none;
+        }
+        
+        .who-we-are-slide.active {
+            display: block;
+        }
+        
+        .who-we-are-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        
+        .who-we-are-button {
+            width: 3rem;
+            height: 3rem;
+            background: var(--color-brand);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        
+        .who-we-are-button:hover {
+            background: var(--color-brand-dark);
+        }
+        
+        .who-we-are-button svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: white;
+        }
+        
+        .who-we-are-dots {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .who-we-are-dot {
+            height: 0.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s;
+            background: var(--color-stone-300);
+            width: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .who-we-are-dot.active {
+            width: 2rem;
+            background: var(--color-brand);
+        }
+        
         /* What We Offer Section */
         .what-we-offer-section {
             background: #302F45;
         }
         
         .what-we-offer-section .section-title {
-            color: var(--color-stone-100);
+            color: var(--color-stone-50);
         }
         
         .what-we-offer-section .section-divider {
@@ -484,16 +545,30 @@
             border: 1px solid var(--color-stone-200);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s;
+            min-height: 120px;
         }
         
         .reason-card:hover {
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
         
+        .partner-logos-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .partner-logos-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
         .reason-icon {
             flex-shrink: 0;
-            width: 2rem;
-            height: 2rem;
+            width: 3rem;
+            height: 3rem;
             background: linear-gradient(to bottom right, var(--color-brand), var(--color-brand-dark));
             border-radius: 9999px;
             display: flex;
@@ -502,8 +577,8 @@
         }
         
         .reason-icon svg {
-            width: 1.25rem;
-            height: 1.25rem;
+            width: 1.5rem;
+            height: 1.5rem;
             color: white;
         }
         
@@ -527,7 +602,7 @@
         }
         
         .testimonials-section .section-title {
-            color: var(--color-stone-100);
+            color: var(--color-stone-50);
         }
         
         .testimonials-section .section-divider {
@@ -553,7 +628,7 @@
         .testimonial-quote {
             font-size: 3.75rem;
             color: var(--color-brand);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
         
         .testimonial-text {
@@ -659,39 +734,52 @@
             line-height: 1.625;
         }
         
-        .benefits-grid {
-            display: grid;
+        .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .benefit-list-item {
+            display: flex;
             gap: 1rem;
+            align-items: flex-start;
         }
         
-        @media (min-width: 640px) {
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .benefit-list-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
         }
         
-        .benefit-card {
-            background: linear-gradient(to bottom right, var(--color-stone-50), var(--color-stone-100));
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            border: 1px solid var(--color-stone-200);
+        .benefit-list-content {
+            flex: 1;
         }
         
-        .benefit-icon {
-            font-size: 2.25rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .benefit-title {
+        .benefit-list-title {
             font-weight: bold;
             font-size: 1.125rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             color: var(--color-stone-900);
         }
         
-        .benefit-description {
+        .benefit-list-description {
             color: var(--color-stone-600);
-            font-size: 0.875rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .partner-logos-container {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-stone-200);
+            text-align: center;
+        }
+        
+        .partner-section-logos {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
         }
         
         /* Contact Form */
@@ -908,7 +996,7 @@
             <div class="section-divider"></div>
 
             <div class="who-we-are-content">
-                <!-- Opening Statement -->
+                <!-- Opening Statement (Fixed - Not in Slider) -->
                 <p class="who-we-are-opener">
                     Travel is more than a destination—it's a journey of discovery, wonder, and connection. 
                     We exist to make those moments accessible, effortless, and extraordinary.
@@ -916,41 +1004,68 @@
 
                 <div class="who-we-are-divider"></div>
 
-                <!-- Our Purpose -->
-                <div class="who-we-are-section-block">
-                    <h3 class="who-we-are-block-title">Our Purpose is Simple</h3>
-                    <p class="who-we-are-block-text">
-                        To bridge the gap between curious travelers and unforgettable experiences. We believe 
-                        adventure should be accessible to all—unencumbered by complexity, elevated by quality, 
-                        and rooted in authenticity.
-                    </p>
+                <!-- Slider with Individual Sections -->
+                <div class="who-we-are-slider">
+                    <!-- Slide 1: Our Purpose -->
+                    <div class="who-we-are-slide active">
+                        <div class="who-we-are-section-block">
+                            <h3 class="who-we-are-block-title">Our Purpose is Simple</h3>
+                            <p class="who-we-are-block-text">
+                                To bridge the gap between curious travelers and unforgettable experiences. We believe 
+                                adventure should be accessible to all—unencumbered by complexity, elevated by quality, 
+                                and rooted in authenticity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: We Believe -->
+                    <div class="who-we-are-slide">
+                        <div class="who-we-are-section-block">
+                            <h3 class="who-we-are-block-title">We Believe</h3>
+                            <p class="who-we-are-block-text">
+                                Every journey deserves to be remarkable. From the grandeur of national parks to the 
+                                charm of local hidden gems, we curate experiences that inspire, educate, and transform. 
+                                Excellence isn't an aspiration—it's our standard.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Quote -->
+                    <div class="who-we-are-slide">
+                        <div class="who-we-are-quote">
+                            The world is vast, beautiful, and waiting. Let us be your guide.
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Join Us -->
+                    <div class="who-we-are-slide">
+                        <div class="who-we-are-cta">
+                            <p class="who-we-are-cta-text">
+                                Built for explorers. Trusted by travelers. Crafted with care.
+                            </p>
+                            <div class="who-we-are-signature">Guided Tourist</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="who-we-are-divider"></div>
-
-                <!-- What We Believe -->
-                <div class="who-we-are-section-block">
-                    <h3 class="who-we-are-block-title">We Believe</h3>
-                    <p class="who-we-are-block-text">
-                        Every journey deserves to be remarkable. From the grandeur of national parks to the 
-                        charm of local hidden gems, we curate experiences that inspire, educate, and transform. 
-                        Excellence isn't an aspiration—it's our standard.
-                    </p>
-                </div>
-
-                <!-- Quote -->
-                <div class="who-we-are-quote">
-                    The world is vast, beautiful, and waiting. Let us be your guide.
-                </div>
-
-                <div class="who-we-are-divider"></div>
-
-                <!-- Join Us -->
-                <div class="who-we-are-cta">
-                    <p class="who-we-are-cta-text">
-                        Built for explorers. Trusted by travelers. Crafted with care.
-                    </p>
-                    <div class="who-we-are-signature">Guided Tourist</div>
+                <!-- Slider Navigation -->
+                <div class="who-we-are-nav">
+                    <button class="who-we-are-button" onclick="changeWhoWeAreSlide(-1)">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <div class="who-we-are-dots">
+                        <div class="who-we-are-dot active" onclick="goToWhoWeAreSlide(0)"></div>
+                        <div class="who-we-are-dot" onclick="goToWhoWeAreSlide(1)"></div>
+                        <div class="who-we-are-dot" onclick="goToWhoWeAreSlide(2)"></div>
+                        <div class="who-we-are-dot" onclick="goToWhoWeAreSlide(3)"></div>
+                    </div>
+                    <button class="who-we-are-button" onclick="changeWhoWeAreSlide(1)">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -972,24 +1087,24 @@
                 </div>
 
                 <div class="offer-card">
-                    <img src="services2.webp" alt="Local Tours" class="offer-image">
-                    <h3 class="offer-title">Local Tours</h3>
+                    <img src="services2.webp" alt="Local Guided Tours" class="offer-image">
+                    <h3 class="offer-title">Local Guided Tours</h3>
                     <p class="offer-description">
                         Discover hidden gems and authentic experiences in cities across the country
                     </p>
                 </div>
 
                 <div class="offer-card">
-                    <img src="services3.webp" alt="Attractions" class="offer-image">
-                    <h3 class="offer-title">Attractions</h3>
+                    <img src="services3.webp" alt="Museums & Attractions" class="offer-image">
+                    <h3 class="offer-title">Museums & Attractions</h3>
                     <p class="offer-description">
                         Skip the lines at popular museums, landmarks, and entertainment venues
                     </p>
                 </div>
 
                 <div class="offer-card">
-                    <img src="services4.webp" alt="Digital Tickets" class="offer-image">
-                    <h3 class="offer-title">Digital Tickets</h3>
+                    <img src="services4.webp" alt="Sightseeing Cruises" class="offer-image">
+                    <h3 class="offer-title">Sightseeing Cruises</h3>
                     <p class="offer-description">
                         Instant access, eco-friendly, and hassle-free ticketing for all experiences
                     </p>
@@ -1008,7 +1123,7 @@
                 <div class="reason-card">
                     <div class="reason-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                     </div>
                     <div class="reason-content">
@@ -1020,7 +1135,7 @@
                 <div class="reason-card">
                     <div class="reason-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
                     <div class="reason-content">
@@ -1032,11 +1147,11 @@
                 <div class="reason-card">
                     <div class="reason-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                         </svg>
                     </div>
                     <div class="reason-content">
-                        <h3>One Platform for Many Experiences</h3>
+                        <h3>One Platform Many Experiences</h3>
                         <p>Access thousands of tours and attractions from a single account</p>
                     </div>
                 </div>
@@ -1044,7 +1159,7 @@
                 <div class="reason-card">
                     <div class="reason-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                         </svg>
                     </div>
                     <div class="reason-content">
@@ -1056,12 +1171,24 @@
                 <div class="reason-card">
                     <div class="reason-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </div>
                     <div class="reason-content">
                         <h3>Built for Travelers & Partners</h3>
                         <p>Designed with input from both adventurers and tour operators</p>
+                    </div>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="reason-content">
+                        <h3>15+ Years of Experience</h3>
+                        <p>Over a decade of connecting travelers with unforgettable experiences and trusted tour operators worldwide</p>
                     </div>
                 </div>
             </div>
@@ -1124,30 +1251,43 @@
                         Join our growing network of trusted tour operators and attractions. Together, we can help more travelers discover amazing experiences.
                     </p>
 
-                    <div class="benefits-grid">
-                        <div class="benefit-card">
-                            <div class="benefit-icon">📈</div>
-                            <h3 class="benefit-title">More Exposure</h3>
-                            <p class="benefit-description">Reach thousands of active travelers</p>
+                    <div class="benefits-list">
+                        <div class="benefit-list-item">
+                            <div class="benefit-list-icon">📈</div>
+                            <div class="benefit-list-content">
+                                <h3 class="benefit-list-title">More Exposure</h3>
+                                <p class="benefit-list-description">Reach thousands of active travelers</p>
+                            </div>
                         </div>
 
-                        <div class="benefit-card">
-                            <div class="benefit-icon">💰</div>
-                            <h3 class="benefit-title">No Upfront Costs</h3>
-                            <p class="benefit-description">Only pay when you get bookings</p>
+                        <div class="benefit-list-item">
+                            <div class="benefit-list-icon">💰</div>
+                            <div class="benefit-list-content">
+                                <h3 class="benefit-list-title">No Upfront Costs</h3>
+                                <p class="benefit-list-description">Only pay when you get bookings</p>
+                            </div>
                         </div>
 
-                        <div class="benefit-card">
-                            <div class="benefit-icon">⚡</div>
-                            <h3 class="benefit-title">Easy Onboarding</h3>
-                            <p class="benefit-description">Get started in less than a week</p>
+                        <div class="benefit-list-item">
+                            <div class="benefit-list-icon">⚡</div>
+                            <div class="benefit-list-content">
+                                <h3 class="benefit-list-title">Easy Onboarding</h3>
+                                <p class="benefit-list-description">Get started in less than a week</p>
+                            </div>
                         </div>
 
-                        <div class="benefit-card">
-                            <div class="benefit-icon">🤝</div>
-                            <h3 class="benefit-title">Trusted Partner</h3>
-                            <p class="benefit-description">Reliable support and technology</p>
+                        <div class="benefit-list-item">
+                            <div class="benefit-list-icon">🤝</div>
+                            <div class="benefit-list-content">
+                                <h3 class="benefit-list-title">Trusted Partner</h3>
+                                <p class="benefit-list-description">Reliable support and technology</p>
+                            </div>
                         </div>
+                    </div>
+
+                    <!-- Partner Logos -->
+                    <div class="partner-logos-container">
+                        <img src="partner-logos.png" alt="ASTA Verified Travel Advisor and Travel Leaders Network Travel Trusted Advisor" class="partner-section-logos">
                     </div>
                 </div>
 
@@ -1224,8 +1364,22 @@
             showSlide(currentSlide);
         }
 
-        // Auto-advance slider every 5 seconds
-        setInterval(nextSlide, 5000);
+        // Auto-advance slider every 8 seconds
+        setInterval(nextSlide, 8000);
+
+        // Testimonials slider autoplay
+        let testimonialAutoplayInterval;
+        
+        function startTestimonialAutoplay() {
+            testimonialAutoplayInterval = setInterval(() => {
+                nextTestimonial();
+            }, 8000); // 8 seconds
+        }
+        
+        function resetTestimonialAutoplay() {
+            clearInterval(testimonialAutoplayInterval);
+            startTestimonialAutoplay();
+        }
 
         // Testimonials
         const testimonials = [
@@ -1268,17 +1422,23 @@
         function nextTestimonial() {
             currentTestimonial = (currentTestimonial + 1) % testimonials.length;
             showTestimonial(currentTestimonial);
+            resetTestimonialAutoplay();
         }
 
         function prevTestimonial() {
             currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
             showTestimonial(currentTestimonial);
+            resetTestimonialAutoplay();
         }
 
         function goToTestimonial(index) {
             currentTestimonial = index;
             showTestimonial(currentTestimonial);
+            resetTestimonialAutoplay();
         }
+        
+        // Start testimonial autoplay
+        startTestimonialAutoplay();
 
         // Smooth scroll
         function scrollToSection(id) {
@@ -1320,6 +1480,62 @@
 
         // Set current year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Who We Are Slider
+        let whoWeAreSlideIndex = 0;
+        let whoWeAreAutoplayInterval;
+        
+        function startWhoWeAreAutoplay() {
+            whoWeAreAutoplayInterval = setInterval(() => {
+                changeWhoWeAreSlide(1, false);
+            }, 8000); // 8 seconds
+        }
+        
+        function resetWhoWeAreAutoplay() {
+            clearInterval(whoWeAreAutoplayInterval);
+            startWhoWeAreAutoplay();
+        }
+
+        function changeWhoWeAreSlide(direction, isManual = true) {
+            const slides = document.querySelectorAll('.who-we-are-slide');
+            const dots = document.querySelectorAll('.who-we-are-dot');
+            
+            slides[whoWeAreSlideIndex].classList.remove('active');
+            dots[whoWeAreSlideIndex].classList.remove('active');
+            
+            whoWeAreSlideIndex += direction;
+            
+            if (whoWeAreSlideIndex >= slides.length) {
+                whoWeAreSlideIndex = 0;
+            }
+            if (whoWeAreSlideIndex < 0) {
+                whoWeAreSlideIndex = slides.length - 1;
+            }
+            
+            slides[whoWeAreSlideIndex].classList.add('active');
+            dots[whoWeAreSlideIndex].classList.add('active');
+            
+            if (isManual) {
+                resetWhoWeAreAutoplay();
+            }
+        }
+
+        function goToWhoWeAreSlide(index) {
+            const slides = document.querySelectorAll('.who-we-are-slide');
+            const dots = document.querySelectorAll('.who-we-are-dot');
+            
+            slides[whoWeAreSlideIndex].classList.remove('active');
+            dots[whoWeAreSlideIndex].classList.remove('active');
+            
+            whoWeAreSlideIndex = index;
+            
+            slides[whoWeAreSlideIndex].classList.add('active');
+            dots[whoWeAreSlideIndex].classList.add('active');
+            resetWhoWeAreAutoplay();
+        }
+        
+        // Start Who We Are autoplay
+        startWhoWeAreAutoplay();
     </script>
 
 </body>
