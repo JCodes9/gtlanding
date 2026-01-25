@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guided Tourist - Where ExplorationMeets Expertise</title>
+    <title>Guided Tourist - Where Exploration Meets Expertise</title>
     <meta name="description" content="From majestic national parks to hidden local gems, your journey starts here. Book tours and attractions with Guided Tourist.">
     
     <style>
@@ -212,14 +212,14 @@
             font-family: 'Playfair Display', Georgia, Cambria, serif;
             font-weight: 400;
             letter-spacing: 0.015em;
-            line-height: 1;
+            line-height: 1.2;
         }
         
         .hero-button {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: #373867;
+            background: #1a1a1a;
             color: white;
             padding: 1rem 2rem;
             border-radius: 9999px;
@@ -229,13 +229,14 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             transition: all 0.3s;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--color-brand);
+            box-shadow: 0 4px 12px rgba(138, 222, 8, 0.3);
         }
         
         .hero-button:hover {
-            background: #2e2f57;
+            background: #2a2a2a;
             transform: scale(1.05);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(138, 222, 8, 0.4);
         }
         
         .hero-button svg {
@@ -246,6 +247,81 @@
         
         .hero-button:hover svg {
             transform: translateY(4px);
+        }
+        
+        /* Hero Navigation Arrows */
+        .hero-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid var(--color-brand);
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        
+        .hero-nav-button:hover {
+            background: rgba(26, 26, 26, 0.9);
+            box-shadow: 0 4px 12px rgba(138, 222, 8, 0.4);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .hero-nav-button svg {
+            width: 1.75rem;
+            height: 1.75rem;
+            color: var(--color-brand);
+        }
+        
+        .hero-nav-left {
+            left: 2rem;
+        }
+        
+        .hero-nav-right {
+            right: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-nav-button {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+            
+            .hero-nav-button svg {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+            
+            .hero-nav-left {
+                left: 1rem;
+            }
+            
+            .hero-nav-right {
+                right: 1rem;
+            }
+        }
+        
+        /* Hero Text Fade Animation */
+        .hero-text-fade {
+            opacity: 0;
+            animation: fadeInHero 1s ease-in-out forwards;
+            animation-delay: 1s;
+        }
+        
+        @keyframes fadeInHero {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
         
         /* Section Styles */
@@ -265,8 +341,9 @@
         .section-divider {
             width: 6rem;
             height: 4px;
-            background: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
+            background: linear-gradient(to right, var(--color-brand), #d4ff80);
             margin: 0 auto 4rem;
+            clip-path: polygon(0 50%, 4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%);
         }
         
         /* Who We Are Section - Layout 5: Minimalist Luxury */
@@ -430,7 +507,27 @@
         
         /* What We Offer Section */
         .what-we-offer-section {
-            background: #302F45;
+            background: #1a1a1a;
+            position: relative;
+        }
+        
+        .what-we-offer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('whatweoffer.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .what-we-offer-section .container {
+            position: relative;
+            z-index: 1;
         }
         
         .what-we-offer-section .section-title {
@@ -438,7 +535,7 @@
         }
         
         .what-we-offer-section .section-divider {
-            background: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
+            background: linear-gradient(to right, var(--color-brand), #d4ff80);
         }
         
         .offers-grid {
@@ -496,6 +593,7 @@
             font-weight: bold;
             margin-bottom: 0.75rem;
             color: var(--color-stone-900);
+            font-family: 'SalinaTrialBook', Georgia, Cambria, 'Times New Roman', serif;
         }
         
         .offer-description {
@@ -513,7 +611,7 @@
         }
         
         .why-choose-section .section-divider {
-            background: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
+            background: linear-gradient(to right, var(--color-brand), #d4ff80);
         }
         
         .reasons-grid {
@@ -597,8 +695,28 @@
         
         /* Testimonials Section */
         .testimonials-section {
-            background: #302F45;
+            background: #1a1a1a;
             color: white;
+            position: relative;
+        }
+        
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('testimonials.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .testimonials-section .container {
+            position: relative;
+            z-index: 1;
         }
         
         .testimonials-section .section-title {
@@ -606,7 +724,7 @@
         }
         
         .testimonials-section .section-divider {
-            background: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
+            background: linear-gradient(to right, var(--color-brand), #d4ff80);
         }
         
         .testimonials-section .section-title {
@@ -647,10 +765,10 @@
         }
         
         .author-avatar {
-            width: 3rem;
-            height: 3rem;
-            background: linear-gradient(to bottom right, var(--color-brand), var(--color-brand-dark));
+            width: 75px;
+            height: 75px;
             border-radius: 9999px;
+            object-fit: cover;
         }
         
         .author-name {
@@ -780,6 +898,8 @@
             max-width: 400px;
             width: 100%;
             height: auto;
+            display: block;
+            margin: 0 auto;
         }
         
         /* Contact Form */
@@ -878,9 +998,9 @@
         
         /* Footer */
         footer {
-            background: #302F45;
+            background: #1a1a1a;
             color: var(--color-stone-300);
-            padding: 2rem 1.5rem;
+            padding: 1.7rem 1.5rem;
         }
         
         .footer-content {
@@ -915,7 +1035,12 @@
         }
         
         .footer-link:hover {
-            color: #4ade80;
+            color: var(--color-brand);
+        }
+        
+        /* Global link hover styles */
+        a:hover {
+            color: var(--color-brand);
         }
         
         /* Responsive Typography */
@@ -973,12 +1098,12 @@
 
         <!-- Hero Content -->
         <div class="hero-content">
-            <h1 class="hero-title">
-                Where Exploration
-                <span class="hero-title-accent">Meets Expertise</span>
+            <h1 class="hero-title hero-text-fade">
+                <span id="heroTitleLine1">Where Exploration</span>
+                <span class="hero-title-accent" id="heroTitleLine2">Meets Expertise</span>
             </h1>
-            <p class="hero-subtitle">
-                From breathtaking national parks to world-famous landmarks, we curate experiences worth remembering.
+            <p class="hero-subtitle hero-text-fade" id="heroSubtitle">
+                Whether it's breathtaking national parks, world-famous landmarks, or local hidden gems, we curate experiences worth remembering.
             </p>
             <button onclick="scrollToSection('who-we-are')" class="hero-button">
                 Discover More
@@ -987,6 +1112,18 @@
                 </svg>
             </button>
         </div>
+
+        <!-- Navigation Arrows -->
+        <button onclick="changeHeroSlide(-1)" class="hero-nav-button hero-nav-left" aria-label="Previous slide">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button onclick="changeHeroSlide(1)" class="hero-nav-button hero-nav-right" aria-label="Next slide">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
     </section>
 
     <!-- Who We Are Section -->
@@ -1208,7 +1345,7 @@
                         The booking process was seamless and the tour exceeded our expectations. Guided Tourist made our national park adventure unforgettable!
                     </p>
                     <div class="testimonial-author">
-                        <div class="author-avatar"></div>
+                        <img id="testimonialAvatar" src="testimonial1.webp" alt="Testimonial author" class="author-avatar">
                         <div>
                             <p id="testimonialAuthor" class="author-name">Sarah Mitchell</p>
                             <p id="testimonialLocation" class="author-location">Denver, CO</p>
@@ -1316,7 +1453,7 @@
                             <textarea id="message" name="message" required rows="4" class="form-textarea" placeholder="Tell us about your business..."></textarea>
                         </div>
 
-                        <button type="submit" id="submitBtn" class="form-button">Send Message</button>
+                        <button type="submit" id="submitBtn" class="form-button">SEND MESSAGE</button>
 
                         <div id="formMessage" class="form-message hidden"></div>
                     </form>
@@ -1346,6 +1483,58 @@
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slider-image');
         const totalSlides = slides.length;
+        
+        // Hero slide content
+        const heroSlides = [
+            {
+                titleLine1: "Where Exploration",
+                titleLine2: "Meets Expertise",
+                subtitle: "Whether it's breathtaking national parks, world-famous landmarks, or local hidden gems, we curate experiences worth remembering."
+            },
+            {
+                titleLine1: "Discover Hidden",
+                titleLine2: "Treasures",
+                subtitle: "From ancient ruins to vibrant local markets, uncover the stories and secrets that make each destination extraordinary."
+            },
+            {
+                titleLine1: "Your Adventure",
+                titleLine2: "Starts Here",
+                subtitle: "Skip the stress of planning and dive straight into unforgettable experiences crafted by local experts who know every hidden gem."
+            },
+            {
+                titleLine1: "Experience the",
+                titleLine2: "Extraordinary",
+                subtitle: "Join thousands of travelers who've discovered that the best journeys combine stunning destinations with authentic local connections."
+            },
+            {
+                titleLine1: "Travel Made",
+                titleLine2: "Effortless",
+                subtitle: "From instant digital tickets to 24/7 support, we handle the details so you can focus on creating memories that last a lifetime."
+            }
+        ];
+
+        function updateHeroText(index) {
+            const content = heroSlides[index];
+            const titleLine1 = document.getElementById('heroTitleLine1');
+            const titleLine2 = document.getElementById('heroTitleLine2');
+            const subtitle = document.getElementById('heroSubtitle');
+            
+            // Remove animation class
+            titleLine1.parentElement.classList.remove('hero-text-fade');
+            subtitle.classList.remove('hero-text-fade');
+            
+            // Trigger reflow to restart animation
+            void titleLine1.offsetWidth;
+            
+            // Update text
+            titleLine1.textContent = content.titleLine1;
+            titleLine2.textContent = content.titleLine2;
+            subtitle.textContent = content.subtitle;
+            
+            // Add animation class back
+            titleLine1.parentElement.classList.add('hero-text-fade');
+            subtitle.classList.add('hero-text-fade');
+        }
 
         function showSlide(index) {
             slides.forEach((slide, i) => {
@@ -1357,15 +1546,21 @@
                     slide.classList.add('inactive');
                 }
             });
+            updateHeroText(index);
         }
 
         function nextSlide() {
             currentSlide = (currentSlide + 1) % totalSlides;
             showSlide(currentSlide);
         }
+        
+        function changeHeroSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
 
-        // Auto-advance slider every 8 seconds
-        setInterval(nextSlide, 8000);
+        // Auto-advance slider every 12 seconds
+        setInterval(nextSlide, 12000);
 
         // Testimonials slider autoplay
         let testimonialAutoplayInterval;
@@ -1386,17 +1581,20 @@
             {
                 text: "The booking process was seamless and the tour exceeded our expectations. Guided Tourist made our national park adventure unforgettable!",
                 author: "Sarah Mitchell",
-                location: "Denver, CO"
+                location: "Denver, CO",
+                avatar: "testimonial1.webp"
             },
             {
                 text: "We've partnered with Guided Tourist for over a year now and couldn't be happier with the exposure and support they provide.",
                 author: "James Chen",
-                location: "Tour Operator, San Francisco"
+                location: "Tour Operator, San Francisco",
+                avatar: "testimonial2.webp"
             },
             {
                 text: "Digital tickets made everything so easy. No printing, no hassle - just show up and enjoy. Highly recommend!",
                 author: "Maria Rodriguez",
-                location: "Austin, TX"
+                location: "Austin, TX",
+                avatar: "testimonial3.webp"
             }
         ];
 
@@ -1407,6 +1605,7 @@
             document.getElementById('testimonialText').textContent = testimonial.text;
             document.getElementById('testimonialAuthor').textContent = testimonial.author;
             document.getElementById('testimonialLocation').textContent = testimonial.location;
+            document.getElementById('testimonialAvatar').src = testimonial.avatar;
             
             // Update dots
             const dots = document.querySelectorAll('#testimonialDots button');
@@ -1470,7 +1669,7 @@
                 
                 document.getElementById('contactForm').reset();
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
+                submitBtn.textContent = 'SEND MESSAGE';
                 
                 setTimeout(() => {
                     formMessage.classList.add('hidden');
@@ -1488,7 +1687,7 @@
         function startWhoWeAreAutoplay() {
             whoWeAreAutoplayInterval = setInterval(() => {
                 changeWhoWeAreSlide(1, false);
-            }, 8000); // 8 seconds
+            }, 10000); // 10 seconds
         }
         
         function resetWhoWeAreAutoplay() {
