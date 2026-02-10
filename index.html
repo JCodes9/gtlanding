@@ -117,6 +117,12 @@
             width: 320px;
         }
         
+        .logo-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
         .logo-container img {
             width: 100%;
             height: 100%;
@@ -289,6 +295,10 @@
         }
         
         @media (max-width: 768px) {
+            .hero-content {
+                padding: 0 4.5rem;
+            }
+            
             .hero-nav-button {
                 width: 2.5rem;
                 height: 2.5rem;
@@ -369,12 +379,12 @@
         }
         
         .who-we-are-section-block {
-            margin-bottom: 4.5rem;
+            margin-bottom: 0.67rem;
             text-align: center;
         }
         
         .who-we-are-block-title {
-            font-size: 1.125rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--color-brand);
             text-transform: uppercase;
@@ -384,7 +394,7 @@
         }
         
         .who-we-are-block-text {
-            font-size: 1.125rem;
+            font-size: 1.375rem;
             line-height: 2;
             color: var(--color-stone-600);
             font-family: var(--font-elegant);
@@ -483,6 +493,17 @@
             width: 1.5rem;
             height: 1.5rem;
             color: white;
+        }
+        
+        .who-we-are-static-signature {
+            font-size: 2rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--color-brand);
+            font-weight: 300;
+            text-align: center;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .who-we-are-dots {
@@ -593,7 +614,7 @@
             font-weight: bold;
             margin-bottom: 0.75rem;
             color: var(--color-stone-900);
-            font-family: 'SalinaTrialBook', Georgia, Cambria, 'Times New Roman', serif;
+            line-height: 1.2;
         }
         
         .offer-description {
@@ -746,16 +767,18 @@
         .testimonial-quote {
             font-size: 3.75rem;
             color: var(--color-brand);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
+            line-height: 1;
         }
         
         .testimonial-text {
             font-size: 1.5rem;
             line-height: 1.625;
+            margin-top: -1rem;
             margin-bottom: 2rem;
-            font-weight: 300;
+            font-weight: 400;
             font-style: italic;
-            color: var(--color-stone-800);
+            color: var(--color-stone-700);
         }
         
         .testimonial-author {
@@ -772,13 +795,15 @@
         }
         
         .author-name {
-            font-weight: bold;
-            font-size: 1.125rem;
+            font-size: 1.0625rem;
             color: var(--color-stone-900);
+            font-weight: 700;
+            line-height: 1.2;
         }
         
         .author-location {
             color: var(--color-stone-600);
+            line-height: 1.2;
         }
         
         .testimonial-nav {
@@ -1069,7 +1094,9 @@
     <header>
         <div class="container">
             <div class="logo-container">
-                <img src="gtlogo.webp" alt="Guided Tourist">
+                <a href="#" class="logo-link">
+                    <img src="gtlogo.webp" alt="Guided Tourist">
+                </a>
             </div>
         </div>
     </header>
@@ -1133,32 +1160,12 @@
             <div class="section-divider"></div>
 
             <div class="who-we-are-content">
-                <!-- Opening Statement (Fixed - Not in Slider) -->
-                <p class="who-we-are-opener">
-                    Travel is more than a destination—it's a journey of discovery, wonder, and connection. 
-                    We exist to make those moments accessible, effortless, and extraordinary.
-                </p>
-
-                <div class="who-we-are-divider"></div>
-
-                <!-- Slider with Individual Sections -->
+                <!-- Slider with 3 Sections -->
                 <div class="who-we-are-slider">
-                    <!-- Slide 1: Our Purpose -->
+                    <!-- Slide 1: We Believe -->
                     <div class="who-we-are-slide active">
                         <div class="who-we-are-section-block">
-                            <h3 class="who-we-are-block-title">Our Purpose is Simple</h3>
-                            <p class="who-we-are-block-text">
-                                To bridge the gap between curious travelers and unforgettable experiences. We believe 
-                                adventure should be accessible to all—unencumbered by complexity, elevated by quality, 
-                                and rooted in authenticity.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2: We Believe -->
-                    <div class="who-we-are-slide">
-                        <div class="who-we-are-section-block">
-                            <h3 class="who-we-are-block-title">We Believe</h3>
+                            <h3 class="who-we-are-block-title">WE BELIEVE</h3>
                             <p class="who-we-are-block-text">
                                 Every journey deserves to be remarkable. From the grandeur of national parks to the 
                                 charm of local hidden gems, we curate experiences that inspire, educate, and transform. 
@@ -1167,42 +1174,40 @@
                         </div>
                     </div>
 
-                    <!-- Slide 3: Quote -->
+                    <!-- Slide 2: Our Purpose -->
                     <div class="who-we-are-slide">
-                        <div class="who-we-are-quote">
-                            The world is vast, beautiful, and waiting. Let us be your guide.
+                        <div class="who-we-are-section-block">
+                            <h3 class="who-we-are-block-title">OUR PURPOSE</h3>
+                            <p class="who-we-are-block-text">
+                                To bridge the gap between curious travelers and unforgettable experiences. We believe 
+                                adventure should be accessible to all—unencumbered by complexity, elevated by quality, 
+                                and rooted in authenticity.
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Slide 4: Join Us -->
+                    <!-- Slide 3: Our Mission -->
                     <div class="who-we-are-slide">
-                        <div class="who-we-are-cta">
-                            <p class="who-we-are-cta-text">
-                                Built for explorers. Trusted by travelers. Crafted with care.
+                        <div class="who-we-are-section-block">
+                            <h3 class="who-we-are-block-title">OUR MISSION</h3>
+                            <p class="who-we-are-block-text">
+                                Travel is more than a destination. It's an adventure, a journey of discovery, wonder, and connection. 
+                                Our mission is to make those moments accessible, effortless, and extraordinary for everyone.
                             </p>
-                            <div class="who-we-are-signature">Guided Tourist</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slider Navigation -->
+                <!-- Static Signature -->
+                <div class="who-we-are-static-signature">@GuidedTourist</div>
+
+                <!-- Slider Navigation - Dots Only -->
                 <div class="who-we-are-nav">
-                    <button class="who-we-are-button" onclick="changeWhoWeAreSlide(-1)">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
                     <div class="who-we-are-dots">
                         <div class="who-we-are-dot active" onclick="goToWhoWeAreSlide(0)"></div>
                         <div class="who-we-are-dot" onclick="goToWhoWeAreSlide(1)"></div>
                         <div class="who-we-are-dot" onclick="goToWhoWeAreSlide(2)"></div>
-                        <div class="who-we-are-dot" onclick="goToWhoWeAreSlide(3)"></div>
                     </div>
-                    <button class="who-we-are-button" onclick="changeWhoWeAreSlide(1)">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>
@@ -1216,32 +1221,32 @@
 
             <div class="offers-grid">
                 <div class="offer-card">
-                    <img src="services1.webp" alt="National Parks" class="offer-image">
-                    <h3 class="offer-title">National Parks</h3>
+                    <img src="services1.webp" alt="National Parks & Monuments" class="offer-image">
+                    <h3 class="offer-title">National Parks & Monuments</h3>
                     <p class="offer-description">
                         Explore America's most breathtaking natural wonders with expert-guided tours
                     </p>
                 </div>
 
                 <div class="offer-card">
-                    <img src="services2.webp" alt="Local Guided Tours" class="offer-image">
-                    <h3 class="offer-title">Local Guided Tours</h3>
+                    <img src="services2.webp" alt="Guided Tours & Activities" class="offer-image">
+                    <h3 class="offer-title">Guided Tours & Activities</h3>
                     <p class="offer-description">
                         Discover hidden gems and authentic experiences in cities across the country
                     </p>
                 </div>
 
                 <div class="offer-card">
-                    <img src="services3.webp" alt="Museums & Attractions" class="offer-image">
-                    <h3 class="offer-title">Museums & Attractions</h3>
+                    <img src="services3.webp" alt="Museums & Local Attractions" class="offer-image">
+                    <h3 class="offer-title">Museums & Local Attractions</h3>
                     <p class="offer-description">
                         Skip the lines at popular museums, landmarks, and entertainment venues
                     </p>
                 </div>
 
                 <div class="offer-card">
-                    <img src="services4.webp" alt="Sightseeing Cruises" class="offer-image">
-                    <h3 class="offer-title">Sightseeing Cruises</h3>
+                    <img src="services4.webp" alt="Sightseeing Adventures" class="offer-image">
+                    <h3 class="offer-title">Sightseeing Adventures</h3>
                     <p class="offer-description">
                         Instant access, eco-friendly, and hassle-free ticketing for all experiences
                     </p>
@@ -1494,7 +1499,7 @@
             {
                 titleLine1: "Discover Hidden",
                 titleLine2: "Treasures",
-                subtitle: "From ancient ruins to vibrant local markets, uncover the stories and secrets that make each destination extraordinary."
+                subtitle: "From natural wonders to historical landmarks, uncover the stories and secrets that make each destination extraordinary."
             },
             {
                 titleLine1: "Your Adventure",
@@ -1559,8 +1564,8 @@
             showSlide(currentSlide);
         }
 
-        // Auto-advance slider every 12 seconds
-        setInterval(nextSlide, 12000);
+        // Auto-advance slider every 6 seconds
+        setInterval(nextSlide, 6000);
 
         // Testimonials slider autoplay
         let testimonialAutoplayInterval;
