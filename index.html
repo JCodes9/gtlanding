@@ -36,12 +36,28 @@
             font-display: swap;
         }
         
+        @font-face {
+            font-family: 'CodecColdBold';
+            src: url('fonts/CodecColdBold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'CodecColdExtraBold';
+            src: url('fonts/CodecColdExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+        
         /* CSS Variables */
         :root {
-            --color-brand: #8ADE08;
-            --color-brand-dark: #7ac907;
-            --color-brand-darker: #6ab406;
-            --color-brand-light: #f0fdf4;
+            --color-brand: #7EC242;
+            --color-brand-dark: #6FA837;
+            --color-brand-darker: #5F8E2F;
+            --color-brand-light: #B4E881;
             --color-stone-50: #fafaf9;
             --color-stone-100: #f5f5f4;
             --color-stone-200: #e7e5e4;
@@ -109,6 +125,56 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+        
+        .contact-link {
+            position: absolute;
+            right: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            background: #1a1a1a;
+            color: white;
+            padding: 0.46875rem 0.9995rem 0.46875rem 1.0625rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 1px solid var(--color-brand);
+            box-shadow: 0 4px 12px rgba(138, 222, 8, 0.3);
+            text-decoration: none;
+        }
+        
+        .contact-link:hover {
+            background: #2a2a2a;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .contact-link-icon {
+            font-size: 0.9375rem;
+            width: 0.9375rem;
+            height: 0.9375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-link-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .contact-link-icon-gradient {
+            stop-color: #ffffff;
+        }
+        
+        .contact-link-icon-gradient-end {
+            stop-color: #ffffff;
         }
         
         .logo-container {
@@ -194,11 +260,11 @@
         
         .hero-title {
             font-size: 4rem;
-            font-weight: bold;
+            font-weight: 800;
             color: white;
             margin-bottom: 1.5rem;
             letter-spacing: 0.02em;
-            font-family: 'SalinaTrialBook', Georgia, Cambria, 'Times New Roman', serif;
+            font-family: 'CodecColdExtraBold', Arial, Helvetica, sans-serif;
             line-height: 1.1;
         }
         
@@ -215,7 +281,6 @@
             max-width: 42rem;
             margin-left: auto;
             margin-right: auto;
-            font-family: 'Playfair Display', Georgia, Cambria, serif;
             font-weight: 400;
             letter-spacing: 0.015em;
             line-height: 1.2;
@@ -321,8 +386,8 @@
         /* Hero Text Fade Animation */
         .hero-text-fade {
             opacity: 0;
-            animation: fadeInHero 1s ease-in-out forwards;
-            animation-delay: 1s;
+            animation: fadeInHero 0.5s ease-in-out forwards;
+            animation-delay: 0.5s;
         }
         
         @keyframes fadeInHero {
@@ -341,17 +406,17 @@
         
         .section-title {
             font-size: 3rem;
-            font-weight: bold;
+            font-weight: 800;
             text-align: center;
             margin-bottom: 1rem;
             color: var(--color-stone-900);
-            font-family: 'SalinaTrialBook', Georgia, Cambria, 'Times New Roman', serif;
+            font-family: 'CodecColdExtraBold', Arial, Helvetica, sans-serif;
         }
         
         .section-divider {
             width: 6rem;
             height: 4px;
-            background: linear-gradient(to right, var(--color-brand), #d4ff80);
+            background: linear-gradient(to right, #7EC242, #B4E881);
             margin: 0 auto 4rem;
             clip-path: polygon(0 50%, 4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%);
         }
@@ -360,11 +425,53 @@
         .who-we-are-section {
             background: var(--color-white);
             padding: 8rem 1.5rem;
+            position: relative;
+        }
+        
+        .who-we-are-section .section-title {
+            color: white;
+        }
+        
+        .who-we-are-section .section-divider {
+            background: linear-gradient(to right, #7EC242, #B4E881);
+        }
+        
+        .who-we-are-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('whoweare-bg.webp');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+        
+        .who-we-are-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: 0;
+        }
+        
+        .who-we-are-section .container {
+            position: relative;
+            z-index: 1;
         }
         
         .who-we-are-content {
-            max-width: 680px;
+            max-width: 940px;
             margin: 0 auto;
+            background: white;
+            padding: 4rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.421875);
         }
         
         .who-we-are-opener {
@@ -395,10 +502,9 @@
         
         .who-we-are-block-text {
             font-size: 1.375rem;
-            line-height: 2;
-            color: var(--color-stone-600);
-            font-family: var(--font-elegant);
-            font-weight: 300;
+            line-height: 1.6875;
+            color: var(--color-stone-900);
+            font-weight: 400;
         }
         
         .who-we-are-divider {
@@ -556,13 +662,13 @@
         }
         
         .what-we-offer-section .section-divider {
-            background: linear-gradient(to right, var(--color-brand), #d4ff80);
+            background: linear-gradient(to right, #7EC242, #B4E881);
         }
         
         .offers-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
         }
         
         @media (min-width: 768px) {
@@ -579,24 +685,39 @@
         
         .offer-card {
             background: white;
-            padding: 2rem;
+            padding: 0;
             border-radius: 1rem;
-            border: 1px solid var(--color-stone-200);
             transition: all 0.3s;
+            overflow: hidden;
         }
         
         .offer-card:hover {
-            border-color: var(--color-brand);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             transform: translateY(-8px);
         }
         
         .offer-image {
+            display: block;
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
-            border-radius: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
+        }
+        
+        .offer-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: var(--color-stone-900);
+            line-height: 1.2;
+            padding: 0 2rem;
+            margin-top: 1.5rem;
+            font-family: 'CodecColdExtraBold', Arial, Helvetica, sans-serif;
+        }
+        
+        .offer-description {
+            color: var(--color-stone-600);
+            padding: 0 2rem 2rem 2rem;
         }
         
         .offer-icon {
@@ -609,30 +730,47 @@
             transform: scale(1.1);
         }
         
-        .offer-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.75rem;
-            color: var(--color-stone-900);
-            line-height: 1.2;
-        }
-        
-        .offer-description {
-            color: var(--color-stone-600);
-            line-height: 1.625;
-        }
-        
         /* Why Choose Us Section */
         .why-choose-section {
             background: white;
+            position: relative;
+        }
+        
+        .why-choose-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('whychooseus-bg.webp');
+            background-size: cover;
+            background-position: top center;
+            z-index: 0;
+        }
+        
+        .why-choose-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: 0;
+        }
+        
+        .why-choose-section .container {
+            position: relative;
+            z-index: 1;
         }
         
         .why-choose-section .section-title {
-            color: var(--color-stone-900);
+            color: white;
         }
         
         .why-choose-section .section-divider {
-            background: linear-gradient(to right, var(--color-brand), #d4ff80);
+            background: linear-gradient(to right, #7EC242, #B4E881);
         }
         
         .reasons-grid {
@@ -653,6 +791,56 @@
             .reasons-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+        }
+        
+        .why-choose-wrapper {
+            max-width: 72rem;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.421875);
+        }
+        
+        .why-choose-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.33rem;
+            padding-top: 1.33rem;
+            border-top: 1px solid var(--color-stone-200);
+        }
+        
+        .toggle-button {
+            background: none;
+            border: none;
+            color: var(--color-stone-900);
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            padding-bottom: calc(0.5rem - 10px);
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .toggle-button:hover {
+            color: var(--color-brand);
+        }
+        
+        .toggle-button.active {
+            color: var(--color-brand);
+            border-bottom: 2px solid var(--color-brand);
+            padding-bottom: calc(0.5rem - 12px);
+        }
+        
+        .reasons-content {
+            display: none;
+        }
+        
+        .reasons-content.active {
+            display: block;
         }
         
         .reason-card {
@@ -686,13 +874,14 @@
         
         .reason-icon {
             flex-shrink: 0;
-            width: 3rem;
-            height: 3rem;
-            background: linear-gradient(to bottom right, var(--color-brand), var(--color-brand-dark));
-            border-radius: 9999px;
+            width: 4rem;
+            height: 4rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 2rem;
+            background: #1a1a1a;
+            border-radius: 9999px;
         }
         
         .reason-icon svg {
@@ -745,12 +934,12 @@
         }
         
         .testimonials-section .section-divider {
-            background: linear-gradient(to right, var(--color-brand), #d4ff80);
+            background: linear-gradient(to right, #7EC242, #B4E881);
         }
         
         .testimonials-section .section-title {
             color: white;
-            font-family: 'SalinaTrialBook', Georgia, Cambria, 'Times New Roman', serif;
+            font-family: 'CodecColdExtraBold', Arial, Helvetica, sans-serif;
         }
         
         .testimonial-box {
@@ -778,7 +967,7 @@
             margin-bottom: 2rem;
             font-weight: 400;
             font-style: italic;
-            color: var(--color-stone-700);
+            color: #151312;
         }
         
         .testimonial-author {
@@ -816,16 +1005,21 @@
         .testimonial-button {
             width: 3rem;
             height: 3rem;
-            background: var(--color-brand);
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid var(--color-brand);
             border-radius: 9999px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
         }
         
         .testimonial-button:hover {
-            background: var(--color-brand-dark);
+            background: rgba(26, 26, 26, 0.9);
+            box-shadow: 0 4px 12px rgba(138, 222, 8, 0.4);
+            transform: scale(1.1);
         }
         
         .testimonial-button svg {
@@ -856,6 +1050,53 @@
         /* Partner Section */
         .partner-section {
             background: white;
+            position: relative;
+        }
+        
+        .partner-section .section-title {
+            color: white;
+        }
+        
+        .partner-section .section-divider {
+            background: linear-gradient(to right, #7EC242, #B4E881);
+        }
+        
+        .partner-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('partnerwithus-bg.webp');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+        
+        .partner-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: 0;
+        }
+        
+        .partner-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .partner-wrapper {
+            max-width: 72rem;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.421875);
         }
         
         .partner-grid {
@@ -872,9 +1113,9 @@
         
         .partner-intro {
             font-size: 1.25rem;
-            color: var(--color-stone-600);
+            color: var(--color-stone-900);
             margin-bottom: 2rem;
-            line-height: 1.625;
+            line-height: 1.37109375;
         }
         
         .benefits-list {
@@ -920,7 +1161,7 @@
         }
         
         .partner-section-logos {
-            max-width: 400px;
+            max-width: 125px;
             width: 100%;
             height: auto;
             display: block;
@@ -938,13 +1179,35 @@
         
         .form-title {
             font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
             color: var(--color-stone-900);
+            text-align: center;
+            font-family: 'CodecColdExtraBold', Arial, Helvetica, sans-serif;
+        }
+        
+        .form-divider {
+            width: 6rem;
+            height: 4px;
+            background: linear-gradient(to right, #7EC242, #B4E881);
+            margin: 0 auto 1rem;
+            clip-path: polygon(0 50%, 4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%);
         }
         
         .form-group {
             margin-bottom: 1.25rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
         }
         
         .form-label {
@@ -965,6 +1228,11 @@
             font-size: 1rem;
             transition: all 0.3s;
             outline: none;
+        }
+        
+        select.form-input {
+            padding-top: calc(0.75rem - 1px);
+            padding-bottom: calc(0.75rem - 1px);
         }
         
         .form-input:focus,
@@ -1095,9 +1363,23 @@
         <div class="container">
             <div class="logo-container">
                 <a href="#" class="logo-link">
-                    <img src="gtlogo.webp" alt="Guided Tourist">
+                    <img src="gtlogo.png" alt="Guided Tourist">
                 </a>
             </div>
+            <a href="#partner-section" class="contact-link" onclick="scrollToSection('partner-section'); return false;">
+                <span class="contact-link-icon">
+                    <svg viewBox="0 0 24 24" fill="url(#mailGradient)">
+                        <defs>
+                            <linearGradient id="mailGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" class="contact-link-icon-gradient" />
+                                <stop offset="100%" class="contact-link-icon-gradient-end" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="url(#mailGradient)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span style="position: relative; top: 2px;">CONTACT</span>
+            </a>
         </div>
     </header>
 
@@ -1130,7 +1412,7 @@
                 <span class="hero-title-accent" id="heroTitleLine2">Meets Expertise</span>
             </h1>
             <p class="hero-subtitle hero-text-fade" id="heroSubtitle">
-                Whether it's breathtaking national parks, world-famous landmarks, or local hidden gems, we curate experiences worth remembering.
+                Whether it's breathtaking national parks or local hidden gems, we curate unforgettable experiences worth remembering that connect you with every destination.
             </p>
             <button onclick="scrollToSection('who-we-are')" class="hero-button">
                 Discover More
@@ -1169,7 +1451,7 @@
                             <p class="who-we-are-block-text">
                                 Every journey deserves to be remarkable. From the grandeur of national parks to the 
                                 charm of local hidden gems, we curate experiences that inspire, educate, and transform. 
-                                Excellence isn't an aspiration—it's our standard.
+                                Excellence isn't an aspiration—it's our standard, and we're committed to delivering it every single time.
                             </p>
                         </div>
                     </div>
@@ -1181,7 +1463,7 @@
                             <p class="who-we-are-block-text">
                                 To bridge the gap between curious travelers and unforgettable experiences. We believe 
                                 adventure should be accessible to all—unencumbered by complexity, elevated by quality, 
-                                and rooted in authenticity.
+                                and rooted in authenticity that brings destinations to life in meaningful ways.
                             </p>
                         </div>
                     </div>
@@ -1192,7 +1474,7 @@
                             <h3 class="who-we-are-block-title">OUR MISSION</h3>
                             <p class="who-we-are-block-text">
                                 Travel is more than a destination. It's an adventure, a journey of discovery, wonder, and connection. 
-                                Our mission is to make those moments accessible, effortless, and extraordinary for everyone.
+                                Our mission is to make those moments accessible, effortless, and extraordinary for everyone who dreams of exploring the world and creating lasting memories.
                             </p>
                         </div>
                     </div>
@@ -1261,77 +1543,117 @@
             <h2 class="section-title">Why Choose Us</h2>
             <div class="section-divider"></div>
 
-            <div class="reasons-grid">
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                    </div>
-                    <div class="reason-content">
-                        <h3>Verified Tour Provider</h3>
-                        <p>All our partners are vetted and certified for quality and safety</p>
+            <div class="why-choose-wrapper">
+                <!-- Tour Operators Content -->
+                <div id="tourOperatorsContent" class="reasons-content active">
+                    <div class="reasons-grid">
+                        <div class="reason-card">
+                            <div class="reason-icon">🔭</div>
+                            <div class="reason-content">
+                                <h3>More Exposure</h3>
+                                <p>Reach thousands of travelers actively searching for unique experiences</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">💰</div>
+                            <div class="reason-content">
+                                <h3>No Upfront Costs</h3>
+                                <p>List your tours for free and only pay when you receive bookings</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">⚡</div>
+                            <div class="reason-content">
+                                <h3>Easy Onboarding</h3>
+                                <p>Get started in minutes with our simple setup process and dashboard</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">✅</div>
+                            <div class="reason-content">
+                                <h3>Trusted Partner</h3>
+                                <p>Join a network backed by industry certifications and proven reliability</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">📊</div>
+                            <div class="reason-content">
+                                <h3>Real-Time Analytics</h3>
+                                <p>Track bookings, revenue, and customer insights with powerful reporting tools</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">🎯</div>
+                            <div class="reason-content">
+                                <h3>Dedicated Support</h3>
+                                <p>Get personalized assistance from our partner success team whenever you need it</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                    </div>
-                    <div class="reason-content">
-                        <h3>Simple & Secure Booking</h3>
-                        <p>Book in minutes with industry-leading encryption and security</p>
+                <!-- Clients Content -->
+                <div id="customersContent" class="reasons-content">
+                    <div class="reasons-grid">
+                        <div class="reason-card">
+                            <div class="reason-icon">✅</div>
+                            <div class="reason-content">
+                                <h3>Verified Experiences</h3>
+                                <p>All tours and attractions are carefully vetted for quality and safety</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">🔒</div>
+                            <div class="reason-content">
+                                <h3>Secure Booking</h3>
+                                <p>Book with confidence using industry-leading encryption and payment protection</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">🎫</div>
+                            <div class="reason-content">
+                                <h3>Instant Confirmation</h3>
+                                <p>Get digital tickets immediately after booking with no waiting or printing</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">⏰</div>
+                            <div class="reason-content">
+                                <h3>Flexible Cancellation</h3>
+                                <p>Free cancellation up to 24 hours before your experience on most bookings</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">⭐</div>
+                            <div class="reason-content">
+                                <h3>Best Price Guarantee</h3>
+                                <p>Find a lower price? We'll match it and give you an additional 10% off</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-card">
+                            <div class="reason-icon">💬</div>
+                            <div class="reason-content">
+                                <h3>24/7 Customer Support</h3>
+                                <p>Our dedicated team is always available to help with questions or concerns</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                        </svg>
-                    </div>
-                    <div class="reason-content">
-                        <h3>One Platform Many Experiences</h3>
-                        <p>Access thousands of tours and attractions from a single account</p>
-                    </div>
-                </div>
-
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                    </div>
-                    <div class="reason-content">
-                        <h3>Customer-First Support</h3>
-                        <p>24/7 dedicated support team ready to help with any questions</p>
-                    </div>
-                </div>
-
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                    </div>
-                    <div class="reason-content">
-                        <h3>Built for Travelers & Partners</h3>
-                        <p>Designed with input from both adventurers and tour operators</p>
-                    </div>
-                </div>
-
-                <div class="reason-card">
-                    <div class="reason-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div class="reason-content">
-                        <h3>15+ Years of Experience</h3>
-                        <p>Over a decade of connecting travelers with unforgettable experiences and trusted tour operators worldwide</p>
-                    </div>
+                <!-- Toggle Buttons -->
+                <div class="why-choose-toggle">
+                    <button class="toggle-button active" onclick="switchWhyChooseContent('tourOperators')">Tour Operators</button>
+                    <button class="toggle-button" onclick="switchWhyChooseContent('customers')">Clients</button>
                 </div>
             </div>
         </div>
@@ -1381,12 +1703,13 @@
     </section>
 
     <!-- Partner with Us Section -->
-    <section class="partner-section">
+    <section id="partner-section" class="partner-section">
         <div class="container">
             <h2 class="section-title">Partner with Us</h2>
             <div class="section-divider"></div>
 
-            <div class="partner-grid">
+            <div class="partner-wrapper">
+                <div class="partner-grid">
                 <!-- Benefits -->
                 <div>
                     <p class="partner-intro">
@@ -1435,12 +1758,13 @@
 
                 <!-- Contact Form -->
                 <div class="contact-form-container">
-                    <h3 class="form-title">Get in Touch</h3>
+                    <h3 class="form-title">Let's Talk Travel</h3>
+                    <div class="form-divider"></div>
                     
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name" class="form-label">Name *</label>
-                            <input type="text" id="name" name="name" required class="form-input" placeholder="Your full name">
+                            <input type="text" id="name" name="name" required class="form-input" placeholder="Full name">
                         </div>
 
                         <div class="form-group">
@@ -1448,14 +1772,24 @@
                             <input type="email" id="email" name="email" required class="form-input" placeholder="your@email.com">
                         </div>
 
-                        <div class="form-group">
-                            <label for="company" class="form-label">Company</label>
-                            <input type="text" id="company" name="company" class="form-input" placeholder="Your company name">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inquiryType" class="form-label">Inquiry Type *</label>
+                                <select id="inquiryType" name="inquiryType" required class="form-input">
+                                    <option value="tour-operator" selected>Tour Operator</option>
+                                    <option value="client">Client</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company" class="form-label">Company</label>
+                                <input type="text" id="company" name="company" class="form-input" placeholder="Company name">
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="message" class="form-label">Message *</label>
-                            <textarea id="message" name="message" required rows="4" class="form-textarea" placeholder="Tell us about your business..."></textarea>
+                            <textarea id="message" name="message" required rows="4" class="form-textarea" placeholder="Share your destination or proposal"></textarea>
                         </div>
 
                         <button type="submit" id="submitBtn" class="form-button">SEND MESSAGE</button>
@@ -1463,6 +1797,7 @@
                         <div id="formMessage" class="form-message hidden"></div>
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -1494,27 +1829,27 @@
             {
                 titleLine1: "Where Exploration",
                 titleLine2: "Meets Expertise",
-                subtitle: "Whether it's breathtaking national parks, world-famous landmarks, or local hidden gems, we curate experiences worth remembering."
+                subtitle: "Whether it's breathtaking national parks or local hidden gems, we curate unforgettable experiences worth remembering that connect you with every destination."
             },
             {
                 titleLine1: "Discover Hidden",
                 titleLine2: "Treasures",
-                subtitle: "From natural wonders to historical landmarks, uncover the stories and secrets that make each destination extraordinary."
+                subtitle: "From natural wonders to historical landmarks, uncover the stories and secrets that make each destination extraordinary and create memories that will inspire your next adventure."
             },
             {
                 titleLine1: "Your Adventure",
                 titleLine2: "Starts Here",
-                subtitle: "Skip the stress of planning and dive straight into unforgettable experiences crafted by local experts who know every hidden gem."
+                subtitle: "Skip the stress of planning and dive straight into unforgettable experiences crafted by local experts who know every hidden gem and can guide you to authentic moments."
             },
             {
                 titleLine1: "Experience the",
                 titleLine2: "Extraordinary",
-                subtitle: "Join thousands of travelers who've discovered that the best journeys combine stunning destinations with authentic local connections."
+                subtitle: "Join thousands of travelers who've discovered that the best journeys combine stunning destinations with authentic local connections and the freedom to explore at your own pace."
             },
             {
                 titleLine1: "Travel Made",
                 titleLine2: "Effortless",
-                subtitle: "From instant digital tickets to 24/7 support, we handle the details so you can focus on creating memories that last a lifetime."
+                subtitle: "From instant digital tickets to 24/7 support, we handle the details so you can focus on creating memories that last a lifetime and enjoying every moment of your journey."
             }
         ];
 
@@ -1596,7 +1931,7 @@
                 avatar: "testimonial2.webp"
             },
             {
-                text: "Digital tickets made everything so easy. No printing, no hassle - just show up and enjoy. Highly recommend!",
+                text: "Digital tickets made everything so easy. No printing, no hassle - just show up and enjoy. The convenience was absolutely perfect for our busy schedule. Highly recommend!",
                 author: "Maria Rodriguez",
                 location: "Austin, TX",
                 avatar: "testimonial3.webp"
@@ -1643,6 +1978,25 @@
         
         // Start testimonial autoplay
         startTestimonialAutoplay();
+
+        // Switch Why Choose Us content
+        function switchWhyChooseContent(type) {
+            const tourOperatorsContent = document.getElementById('tourOperatorsContent');
+            const customersContent = document.getElementById('customersContent');
+            const buttons = document.querySelectorAll('.toggle-button');
+            
+            if (type === 'tourOperators') {
+                tourOperatorsContent.classList.add('active');
+                customersContent.classList.remove('active');
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                tourOperatorsContent.classList.remove('active');
+                customersContent.classList.add('active');
+                buttons[0].classList.remove('active');
+                buttons[1].classList.add('active');
+            }
+        }
 
         // Smooth scroll
         function scrollToSection(id) {
