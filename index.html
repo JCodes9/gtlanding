@@ -355,8 +355,13 @@
                 padding: 0 1.5rem;
             }
             
+            .who-we-are-section {
+                padding-top: calc(8rem + 5px);
+                padding-bottom: calc(8rem + 5px);
+            }
+            
             .who-we-are-content {
-                padding: 2rem 0.75rem !important;
+                padding: 2rem 1.25rem !important;
             }
             
             .who-we-are-static-signature {
@@ -372,7 +377,7 @@
                 max-width: 100%;
                 width: 100%;
                 margin: 0 !important;
-                padding: 2rem 0.75rem !important;
+                padding: 2rem 1.25rem !important;
             }
             
             .reasons-grid {
@@ -387,11 +392,16 @@
                 padding: 1.25rem !important;
             }
             
+            .partner-section {
+                padding-top: calc(8rem + 5px);
+                padding-bottom: calc(8rem + 5px);
+            }
+            
             .partner-wrapper {
                 max-width: 100%;
                 width: 100%;
                 margin: 0 !important;
-                padding: 2rem 0.75rem !important;
+                padding: 2rem 1.25rem !important;
             }
             
             .partner-grid {
@@ -399,12 +409,22 @@
                 margin: 0 !important;
             }
             
+            .partner-intro {
+                text-align: center;
+            }
+            
+            .partner-intro {
+                text-align: center;
+            }
+            
             .testimonial-box {
-                padding: 2rem 0.75rem !important;
+                padding: 2rem 1.25rem !important;
             }
             
             .container {
                 padding: 0 1rem;
+                max-width: 100%;
+                overflow-x: hidden;
             }
         }
         
@@ -441,7 +461,7 @@
         .section-divider {
             width: 6rem;
             height: 4px;
-            background: linear-gradient(to right, #7EC242, #B4E881);
+            background: linear-gradient(to right, #719E40, #7EC242);
             margin: 0 auto 4rem;
             clip-path: polygon(0 50%, 4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%);
         }
@@ -458,7 +478,7 @@
         }
         
         .who-we-are-section .section-divider {
-            background: linear-gradient(to right, #7EC242, #B4E881);
+            background: linear-gradient(to right, #719E40, #7EC242);
         }
         
         .who-we-are-section::before {
@@ -481,7 +501,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.65625);
+            background-color: rgba(0, 0, 0, 0.75);
             z-index: 0;
         }
         
@@ -521,26 +541,28 @@
             color: var(--color-brand);
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.125rem;
             font-family: var(--font-elegant);
         }
         
         .who-we-are-block-text {
-            font-size: 1.375rem;
-            line-height: 1.6875;
-            color: var(--color-stone-900);
+            font-size: 1.5rem;
+            line-height: 1.625;
+            color: #151312;
             font-weight: 400;
             font-style: italic;
+            margin-top: 0;
+            padding-top: 0;
         }
         
-        .who-we-are-block-text::before {
-            content: '"';
-            margin-right: 0.1rem;
-        }
-        
-        .who-we-are-block-text::after {
-            content: '"';
-            margin-left: 0.1rem;
+        .who-we-are-quote {
+            font-size: 3.75rem;
+            color: var(--color-brand);
+            margin-bottom: 0;
+            margin-left: 10px;
+            padding-bottom: 0;
+            line-height: 0.3;
+            text-align: left;
         }
         
         .who-we-are-divider {
@@ -548,29 +570,6 @@
             height: 1px;
             background: var(--color-brand);
             margin: 4rem auto;
-        }
-        
-        .who-we-are-quote {
-            font-size: 1.75rem;
-            line-height: 1.8;
-            color: var(--color-stone-800);
-            text-align: center;
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-weight: 300;
-            margin: 5rem 0 2rem 0;
-            position: relative;
-        }
-        
-        .who-we-are-quote::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--color-brand);
-            opacity: 0.3;
-            position: absolute;
-            left: -20px;
-            top: -30px;
-            font-family: var(--font-serif);
         }
         
         .who-we-are-cta {
@@ -701,7 +700,7 @@
         }
         
         .what-we-offer-section .section-divider {
-            background: linear-gradient(to right, #7EC242, #B4E881);
+            background: linear-gradient(to right, #719E40, #7EC242);
         }
         
         .offers-grid {
@@ -795,7 +794,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.65625);
+            background-color: rgba(0, 0, 0, 0.75);
             z-index: 0;
         }
         
@@ -809,7 +808,7 @@
         }
         
         .why-choose-section .section-divider {
-            background: linear-gradient(to right, #7EC242, #B4E881);
+            background: linear-gradient(to right, #719E40, #7EC242);
         }
         
         .reasons-grid {
@@ -919,8 +918,8 @@
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            background: #4D4D4E;
-            border: 1px solid #7EC242;
+            background: transparent;
+            border: 1px solid #1a1a1a;
             border-radius: 9999px;
         }
         
@@ -974,7 +973,7 @@
         }
         
         .testimonials-section .section-divider {
-            background: linear-gradient(to right, #7EC242, #B4E881);
+            background: linear-gradient(to right, #719E40, #7EC242);
         }
         
         .testimonials-section .section-title {
@@ -1098,7 +1097,7 @@
         }
         
         .partner-section .section-divider {
-            background: linear-gradient(to right, #7EC242, #B4E881);
+            background: linear-gradient(to right, #719E40, #7EC242);
         }
         
         .partner-section::before {
@@ -1121,7 +1120,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.65625);
+            background-color: rgba(0, 0, 0, 0.75);
             z-index: 0;
         }
         
@@ -1141,6 +1140,7 @@
         
         .partner-grid {
             display: grid;
+            grid-template-columns: 1fr;
             gap: 3rem;
             align-items: start;
         }
@@ -1149,6 +1149,37 @@
             .partner-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+        }
+        
+        .network-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--color-stone-900);
+            text-align: center;
+            font-family: 'CodecColdExtraBold', Arial, Helvetica, sans-serif;
+        }
+        
+        @media (min-width: 1024px) {
+            .network-title {
+                margin-top: 29px;
+            }
+        }
+        
+        .network-divider {
+            width: 6rem;
+            height: 4px;
+            background: linear-gradient(to right, #719E40, #7EC242);
+            margin: 0 auto 1rem;
+            clip-path: polygon(0 50%, 4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%);
+        }
+        
+        .network-intro {
+            font-size: 1.125rem;
+            color: var(--color-stone-700);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            text-align: center;
         }
         
         .partner-intro {
@@ -1160,20 +1191,56 @@
         
         .benefits-list {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: calc(2rem - 10px);
         }
         
         .benefit-list-item {
             display: flex;
             gap: 1rem;
             align-items: flex-start;
+            flex: 1 1 calc(50% - 0.75rem);
+            min-width: 200px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--color-stone-200);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        
+        .benefit-list-item:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .benefit-list-item {
+                flex: 1 1 100%;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .benefit-list-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
         
         .benefit-list-icon {
-            font-size: 2rem;
             flex-shrink: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .benefit-list-icon svg {
+            width: 100%;
+            height: 100%;
         }
         
         .benefit-list-content {
@@ -1193,15 +1260,26 @@
             line-height: 1.5;
         }
         
+        .social-link {
+            color: var(--color-stone-600);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .social-link:hover {
+            color: var(--color-brand);
+            text-decoration: underline;
+        }
+        
         .partner-logos-container {
-            margin-top: 3rem;
+            margin-top: calc(3rem - 5px);
             padding-top: 2rem;
             border-top: 1px solid var(--color-stone-200);
             text-align: center;
         }
         
         .partner-section-logos {
-            max-width: 125px;
+            max-width: 100px;
             width: 100%;
             height: auto;
             display: block;
@@ -1215,6 +1293,8 @@
             border-radius: 1rem;
             border: 1px solid var(--color-stone-200);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            overflow: hidden;
         }
         
         .form-title {
@@ -1229,7 +1309,7 @@
         .form-divider {
             width: 6rem;
             height: 4px;
-            background: linear-gradient(to right, #7EC242, #B4E881);
+            background: linear-gradient(to right, #719E40, #7EC242);
             margin: 0 auto 1rem;
             clip-path: polygon(0 50%, 4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%);
         }
@@ -1488,6 +1568,7 @@
                     <div class="who-we-are-slide active">
                         <div class="who-we-are-section-block">
                             <h3 class="who-we-are-block-title">WE BELIEVE</h3>
+                            <div class="who-we-are-quote">&ldquo;</div>
                             <p class="who-we-are-block-text">
                                 Every journey deserves to be remarkable. From the grandeur of national parks to the 
                                 charm of local hidden gems, we curate experiences that inspire, educate, and transform. 
@@ -1500,6 +1581,7 @@
                     <div class="who-we-are-slide">
                         <div class="who-we-are-section-block">
                             <h3 class="who-we-are-block-title">OUR PURPOSE</h3>
+                            <div class="who-we-are-quote">&ldquo;</div>
                             <p class="who-we-are-block-text">
                                 To bridge the gap between curious travelers and unforgettable experiences. We believe 
                                 adventure should be accessible to all—unencumbered by complexity, elevated by quality, 
@@ -1512,6 +1594,7 @@
                     <div class="who-we-are-slide">
                         <div class="who-we-are-section-block">
                             <h3 class="who-we-are-block-title">OUR MISSION</h3>
+                            <div class="who-we-are-quote">&ldquo;</div>
                             <p class="who-we-are-block-text">
                                 Travel is more than a destination. It's an adventure, a journey of discovery, wonder, and connection. 
                                 Our mission is to make those moments accessible, effortless, and extraordinary for everyone who dreams of exploring the world and creating lasting memories.
@@ -1752,40 +1835,67 @@
                 <div class="partner-grid">
                 <!-- Benefits -->
                 <div>
-                    <p class="partner-intro">
+                    <h3 class="network-title">Our Network</h3>
+                    <div class="network-divider"></div>
+                    <p class="network-intro">
                         Join our growing network of trusted tour operators and attractions. Together, we can help more travelers discover amazing experiences.
                     </p>
 
                     <div class="benefits-list">
                         <div class="benefit-list-item">
-                            <div class="benefit-list-icon">📈</div>
+                            <div class="benefit-list-icon">
+                                <svg fill="#1877F2" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </div>
                             <div class="benefit-list-content">
-                                <h3 class="benefit-list-title">More Exposure</h3>
-                                <p class="benefit-list-description">Reach thousands of active travelers</p>
+                                <h3 class="benefit-list-title">Facebook</h3>
+                                <p class="benefit-list-description"><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">@GuidedTourist</a></p>
                             </div>
                         </div>
 
                         <div class="benefit-list-item">
-                            <div class="benefit-list-icon">💰</div>
+                            <div class="benefit-list-icon">
+                                <svg fill="url(#instagramGradient)" viewBox="0 0 24 24">
+                                    <defs>
+                                        <linearGradient id="instagramGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#FED373;stop-opacity:1" />
+                                            <stop offset="15%" style="stop-color:#F15245;stop-opacity:1" />
+                                            <stop offset="40%" style="stop-color:#D92E7F;stop-opacity:1" />
+                                            <stop offset="75%" style="stop-color:#9B36B7;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#515BD4;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                </svg>
+                            </div>
                             <div class="benefit-list-content">
-                                <h3 class="benefit-list-title">No Upfront Costs</h3>
-                                <p class="benefit-list-description">Only pay when you get bookings</p>
+                                <h3 class="benefit-list-title">Instagram</h3>
+                                <p class="benefit-list-description"><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">@GuidedTourist</a></p>
                             </div>
                         </div>
 
                         <div class="benefit-list-item">
-                            <div class="benefit-list-icon">⚡</div>
+                            <div class="benefit-list-icon">
+                                <svg fill="#000000" viewBox="0 0 24 24">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </div>
                             <div class="benefit-list-content">
-                                <h3 class="benefit-list-title">Easy Onboarding</h3>
-                                <p class="benefit-list-description">Get started in less than a week</p>
+                                <h3 class="benefit-list-title">X</h3>
+                                <p class="benefit-list-description"><a href="https://www.x.com" target="_blank" rel="noopener noreferrer" class="social-link">@GuidedTourist</a></p>
                             </div>
                         </div>
 
                         <div class="benefit-list-item">
-                            <div class="benefit-list-icon">🤝</div>
+                            <div class="benefit-list-icon">
+                                <svg fill="#FF0000" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </div>
                             <div class="benefit-list-content">
-                                <h3 class="benefit-list-title">Trusted Partner</h3>
-                                <p class="benefit-list-description">Reliable support and technology</p>
+                                <h3 class="benefit-list-title">YouTube</h3>
+                                <p class="benefit-list-description"><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">@GuidedTourist</a></p>
                             </div>
                         </div>
                     </div>
@@ -1965,7 +2075,7 @@
                 avatar: "testimonial1.webp"
             },
             {
-                text: "We've partnered with Guided Tourist for over a year now and couldn't be happier with the exposure and support they provide.",
+                text: "We've partnered with Guided Tourist for over a year now and couldn't be happier with the exposure and support they provide. Their platform has truly elevated our business.",
                 author: "James Chen",
                 location: "Tour Operator, San Francisco",
                 avatar: "testimonial2.webp"
